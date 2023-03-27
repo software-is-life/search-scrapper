@@ -3,6 +3,11 @@ This simple project is a web automation projects
 to compare the results of two different ui elements
 with typescript and puppeteer.
 
+## How to run locally
+```text
+npm run dev
+```
+
 ### Goals
 - Collect `companies` page of hicaptilize page and create a type object (hint: sitemap may help)
 - On Alight website search from a set of employers using search trool.
@@ -17,13 +22,20 @@ with typescript and puppeteer.
 - Create a lambda for these automation scripts and productionalize the process.
 - Creating a CLI for automation scripts.
 
-
+## Overall insights:
+- Query Selectors were hard to pinpoint. Inspect copy query selector helped on console, but ran into issues with running the scraper.ts file with some fields.
+- Actual page actions really shined through with puppeteer.
+- Didn't have time to implement localhost ability. Would be pretty simple with node and httpserver/express routing.
+- Didn't get a chance to compare the search results. Hardest part would be determining the correct query selectors on both page.
+- Current script is a little brittle to changing query selectors (think ids and class names).
+- For common goals/actions you can generalize.
 
 ### Data Type Object
 ```typescript
 type Company = {
     name: string 
     industry: string 
+    headquarters: string
     phoneNumber: string
     contact: string
     ein: string
@@ -46,10 +58,9 @@ type ProviderPlan = {
 } 
 ```
 
-
-
 ### Things to improve:
-
+- query selection investigation and gathering.
+- making overall scrapping more generalized and more extensible.
 
 #### Website sources:
 - https://www.hicapitalize.com/find-my-401k/
