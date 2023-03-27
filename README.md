@@ -17,6 +17,37 @@ with typescript and puppeteer.
 - Create a lambda for these automation scripts and productionalize the process.
 - Creating a CLI for automation scripts.
 
+
+
+### Data Type Object
+```typescript
+type Company = {
+    name: string 
+    industry: string 
+    phoneNumber: string
+    contact: string
+    ein: string
+    numberOfEmployees: number
+    planProvider: ProviderPlan
+}
+```
+
+```typescript
+type ProviderPlan = {
+    companyName: string
+    provider: string
+    website: string
+    planName: string
+    phoneNumber: string
+    faxNumber: string
+    hoursOfOperation: string
+    address: string
+    
+} 
+```
+
+
+
 ### Things to improve:
 
 
